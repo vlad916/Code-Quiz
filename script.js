@@ -19,8 +19,8 @@ var questions = [
     },
     {
         title: "What language is used to style webpages?",
-        choices: ["MySql", "Node", "CSS", "Spanish"],
-        correctAnswer: "CSS"        
+        choices: ["A. MySql", "B. Node", "C. CSS", "D .Spanish"],
+        correctAnswer: "C. CSS"        
     },
     {
         title: "Which of the following function of Boolean object returns the primitive value of the Boolean object?",
@@ -30,8 +30,8 @@ var questions = [
     {
       
         title: "Arrays in JavaScript can be used to store:",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        correctAnswer: "all of the above"
+        choices: ["A. Numbers and strings", "B. Other arrays", "C. Booleans", "D. All of the above"],
+        correctAnswer: "D. All of the above"
     },
     {
         title: "Which of the following function of String object returns the index within the calling String object of the first occurence of the specified value?",
@@ -101,8 +101,6 @@ function startOver() {
   timeEl.textContent = "Time Remaining: 0";
   startBtn.style.display = "initial";
   viewScoresBtn.style.display = "initial";
-  document.getElementById("instructions").innerHTML =
-    "As a coding bootcamp student, I want to take a timed quiz on JavaScript fundamentals that stores high scores so I can gauge my progrees compared to my peers.";
 }
 
 // If clicked, will show high scores in the array, but if array is empty, shows "no scores"
@@ -133,7 +131,6 @@ startBtn.addEventListener("click", function() {
   viewScoresBtn.style.display = "none";
 
   document.getElementById("choice-response").innerHTML = "";
-  document.getElementById("instructions").innerHTML = "";
 
   displayQuestions();
 });
