@@ -44,4 +44,32 @@ const initialsEnter = document.getElementById("initials");
 const showScores = document.getElementById("scores");
 
 
-f
+function setTime() {
+    timerInterval = setInterval(function() {
+        secRemaining--;
+        timeElement.textContent = "Time Remaining: " + secRemaining;
+        if (secRemaining === 0) {
+            finish();
+        }
+    }, 1000);
+}
+
+function finish() {
+
+    clearInterval(timerInterval);
+
+    secRemaining = 0;
+
+    document.querySelector(".time").innerHTML = "Done";
+
+    questionsElement.textContent = "";
+
+    score = numCorrect * (100 / questions.length);
+
+    document.getElementById("choice-response").innerHTML = 
+        "Your final score is: " + score;
+
+    initialsEnter.style.display = "block";
+
+    document.getElementById("myInitials").value = "";
+}
