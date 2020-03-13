@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="us-en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>code quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class='card'>
+            <h1>Javascript Quiz Fundamentals</h1>
+        </div>
+        <div class="card-body text-center">
+            <p>Time to check our knowledge of Javascript...</p>
+            <hr>
+            <button type="button" class="startButton" id="start">Start Quiz</button>
+            <button type="button" class="scoreButton" id="viewScores" onclick="viewAllScores()">View High
+                Scores</button>
+            <main class="questions-rendered"></main>
+            <p id="choice-response"></p>
+        </div>
+        <div class="initialsEnter text-center" id="initials">Enter Initials: <input type="text" onfocus="this.value=''"
+                id="myInitials" value="">
+            <button type="button" class="initialsButton" id="enterInitials" onclick="getInitials()">Submit</button>
+        </div>
+        <div class="showScore text-center" id="scores" >
+            <button type="button" class="scoreButton" id="goBack" onclick="startOver()">Go Back</button>
+            <button type="button" class="clearButton" id="clearScores" onclick="clearScores()">Clear High
+                Scores</button>
+        </div>
+    </div>
+
+</body>
+
+
+
+</html>
