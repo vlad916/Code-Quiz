@@ -116,3 +116,18 @@ function clearScores() {
     document.getElementById("choice-response").innerHTML = highScoresArray;
 }
 
+startButton.addEventListener("click", function() {
+    secRemaining = 75;
+    setTime();
+
+    numCorrect = 0;
+    questionIndex = 0;
+
+    startButton.style.display = "none";
+    scoreButton.style.display = "none";
+
+    document.getElementById("choice-response").innerHTML = "";
+    
+    displayQuestions();
+});
+
