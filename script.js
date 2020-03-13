@@ -10,33 +10,6 @@ var highScores;
 var highScoresArray = [];
 var score = 0;
 
-var questions = [
-    {
-        title: "What is the HTML tag under which one can write the Javascript code?",
-        choices: ["A. <javascript>", "B. <scripted>", "C. <script>", "D. <js>"],
-        correctAnswer: "C. <script>"
-    },
-    {
-        title: "How can you get the type of arguments passed to a function?",
-        choices: ["A. Using type of operator", "B. Using getType function", "C. Both of the above", "D. None of the above"],
-        correctAnswer: "A. Using type of operator"
-    },
-    {
-        title: "Which built-in method calls a function for each element in the array?",
-        choices: ["A. While()", "B. Loop()", "C. forEach()", "D. None of the above"],
-        correctAnswer: "C. forEach"
-    },
-    {
-        title: "Which of the following function of Boolean object returns the primitive value of the Boolean object?",
-        choices: ["A. toSource()", "B. valueOf()", "C. toString()", "D. None of the above"],
-        correctAnswer: "B. valueOf()"
-    },
-    {
-        title: "Which of the following function of String object returns the index within the calling String object of the first occurence of the specified value?",
-        choices: ["A. substr()", "B. search()", "C. lastIndexOf()", "D. indexOf()"],
-        correctAnswer: "D. indexOf()"
-    }
-];
 
 const startButton = document.getElementById("start");
 const scoreButton = document.getElementById("viewScores");
@@ -127,7 +100,48 @@ startButton.addEventListener("click", function() {
     scoreButton.style.display = "none";
 
     document.getElementById("choice-response").innerHTML = "";
-    
+    document.getElementById("instructions").innerHTML = "";
     displayQuestions();
 });
 
+function displayQuestions() {
+    if (secRemaining <= 0 || questionIndex >= questions.length) {
+        finish();
+        return;
+    }
+    questionsElement.textContent = "";
+
+    var question = questions[questionIndex];
+    var questionDiv = document.createElement("div");
+    var questionText = document.createElement("p");
+
+    questionText.textContent = question.title;
+
+    questionDiv.appendChild(questionText);
+
+    for (i = 0; i < question.choices.length; i++) {
+        var option = document.createElement("button");
+
+        option.textContent = question.choices[i];
+
+        option.style.cssText = 
+            "display: block; padding: 5px; margin-left: 40%; margin-bottom: 5px; width: 175px";
+        option.setAttribute("class", "option");
+
+        option.addEventListener("click", function(e) {
+            var optionClicked = e.target.innerHTML;
+            if (optionClicked === questions[questionIndex].correctAnswer){
+                numCorrect++;
+                document.getElementById("choice-response").innerHTML = "correct";
+                displayQuestions(questionIndex++);
+            } else {
+
+                secRemaining = secRemaining - secPenalty;
+                document.getElementById("choice-response").innerHTML = "wrong";
+                displayQuestions(questionIndex++);
+            }
+        });
+        questionDiv.appendChild(option);
+    }
+    questionsElement.appendChild(questionDiv);
+}
