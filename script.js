@@ -155,9 +155,7 @@ function displayQuestions() {
     var option = document.createElement("button");
 
     option.textContent = question.choices[i];
-
-    option.style.cssText =
-      "display: block; padding: 5px; margin-left: 40%; margin-bottom: 5px; width: 175px;";
+    
     option.setAttribute("class", "option");
 
     option.addEventListener("click", function(e) {
