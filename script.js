@@ -73,3 +73,46 @@ function finish() {
 
     document.getElementById("myInitials").value = "";
 }
+
+
+
+function getInitials() {
+    if (highScoresArray.length === 0) {
+        highScores = document.getElementById("myInitials").value + " - " + score;
+    } else {
+        highScores = 
+        " " + document.getElementById("myInitials").value + " " + score;
+    }
+
+    highScoresArray.push(highScores);
+    initialsEnter.style.display = "none";
+    document.querySelector("time").innerHTML = "High Scores";
+    document.getElementById("choice-response").innerHTML = highScoresArray;
+    showScores.style.display = "block";
+}
+
+
+
+function startOver() {
+    document.getElementById("choice-response").innerHTML = "";
+    showScores.style.display = "none";
+    timeElement.textContent = "Time Remaining: 0";
+    startButton.style.display = "initial";
+    scoreButton.style.display = "initial";
+}
+
+
+function viewAllScores() {
+    if (highScoresArray.length  === 0) {
+    document.getElementById("choice-response").innerHTML = "No Scores: ";
+    } else {
+        document.getElementById("choice-response").innerHTML = 
+        "High Scores: " + highScoresArray;
+    }
+}
+
+function clearScores() {
+    highScoresArray = [];
+    document.getElementById("choice-response").innerHTML = highScoresArray;
+}
+
