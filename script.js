@@ -18,9 +18,9 @@ var questions = [
 
   },
   {
-    title: "What language is used to style webpages?",
-    choices: ["A. MySql", "B. Node", "C. CSS", "D .Spanish"],
-    correctAnswer: "C. CSS"
+    title: "Which of the following function of Array object creates a new array with all of the elements of this array for which the provided filtering function returns true?",
+    choices: ["A. Concat()", "B. every()", "C. filter()", "D. some()"],
+    correctAnswer: "C. filter()"
   },
   {
     title: "Which of the following function of Boolean object returns the primitive value of the Boolean object?",
@@ -29,9 +29,9 @@ var questions = [
   },
   {
 
-    title: "Arrays in JavaScript can be used to store:",
-    choices: ["A. Numbers and strings", "B. Other arrays", "C. Booleans", "D. All of the above"],
-    correctAnswer: "D. All of the above"
+    title: "Which built-in method calls a function for each element in the Array?",
+    choices: ["A. while()", "B. loop()", "C. forEach()", "D. None of the above"],
+    correctAnswer: "C. forEach()"
   },
   {
     title: "Which of the following function of String object returns the index within the calling String object of the first occurence of the specified value?",
