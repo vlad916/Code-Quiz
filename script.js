@@ -11,35 +11,35 @@ var highScoresArray = [];
 var score = 0;
 
 var questions = [
-    { 
-        title: "How can you get the type of arguments passed to a function?",
-        choices: ["A. Using type of operator", "B. Using getType function", "C. Both of the above", "D. None of the above"],
-        correctAnswer: "A. Using type of operator"
-       
-    },
-    {
-        title: "What language is used to style webpages?",
-        choices: ["A. MySql", "B. Node", "C. CSS", "D .Spanish"],
-        correctAnswer: "C. CSS"        
-    },
-    {
-        title: "Which of the following function of Boolean object returns the primitive value of the Boolean object?",
-        choices: ["A. toSource()", "B. valueOf()", "C. toString()", "D. None of the above"],
-        correctAnswer: "B. valueOf()"
-    },
-    {
-      
-        title: "Arrays in JavaScript can be used to store:",
-        choices: ["A. Numbers and strings", "B. Other arrays", "C. Booleans", "D. All of the above"],
-        correctAnswer: "D. All of the above"
-    },
-    {
-        title: "Which of the following function of String object returns the index within the calling String object of the first occurence of the specified value?",
-        choices: ["A. substr()", "B. search()", "C. lastIndexOf()", "D. indexOf()"],
-        correctAnswer: "D. indexOf()"
-    }
-  ];
-  
+  {
+    title: "How can you get the type of arguments passed to a function?",
+    choices: ["A. Using type of operator", "B. Using getType function", "C. Both of the above", "D. None of the above"],
+    correctAnswer: "A. Using type of operator"
+
+  },
+  {
+    title: "What language is used to style webpages?",
+    choices: ["A. MySql", "B. Node", "C. CSS", "D .Spanish"],
+    correctAnswer: "C. CSS"
+  },
+  {
+    title: "Which of the following function of Boolean object returns the primitive value of the Boolean object?",
+    choices: ["A. toSource()", "B. valueOf()", "C. toString()", "D. None of the above"],
+    correctAnswer: "B. valueOf()"
+  },
+  {
+
+    title: "Arrays in JavaScript can be used to store:",
+    choices: ["A. Numbers and strings", "B. Other arrays", "C. Booleans", "D. All of the above"],
+    correctAnswer: "D. All of the above"
+  },
+  {
+    title: "Which of the following function of String object returns the index within the calling String object of the first occurence of the specified value?",
+    choices: ["A. substr()", "B. search()", "C. lastIndexOf()", "D. indexOf()"],
+    correctAnswer: "D. indexOf()"
+  }
+];
+
 
 const startBtn = document.getElementById("start");
 const viewScoresBtn = document.getElementById("viewScores");
@@ -48,7 +48,7 @@ const scoresDiv = document.getElementById("scores");
 
 // Starts timer
 function setTime() {
-  timerInterval = setInterval(function() {
+  timerInterval = setInterval(function () {
     secondsRemaining--;
     timeEl.textContent = "Time Remaining: " + secondsRemaining;
     if (secondsRemaining === 0) {
@@ -120,7 +120,7 @@ function clearScores() {
 }
 
 // Resetting values needed to start a new quiz
-startBtn.addEventListener("click", function() {
+startBtn.addEventListener("click", function () {
   secondsRemaining = 75;
   setTime();
 
@@ -155,10 +155,10 @@ function displayQuestions() {
     var option = document.createElement("button");
 
     option.textContent = question.choices[i];
-    
+
     option.setAttribute("class", "option");
 
-    option.addEventListener("click", function(e) {
+    option.addEventListener("click", function (e) {
       var optionClicked = e.target.innerHTML;
       if (optionClicked === questions[questionIndex].correctAnswer) {
         // Variable is keeping track of the correct answers
