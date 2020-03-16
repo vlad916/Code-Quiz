@@ -153,11 +153,7 @@ function displayQuestions() {
 
   for (i = 0; i < question.choices.length; i++) {
     var option = document.createElement("button");
-
     option.textContent = question.choices[i];
-
-    option.setAttribute("class", "option");
-
     option.addEventListener("click", function (e) {
       var optionClicked = e.target.innerHTML;
       if (optionClicked === questions[questionIndex].correctAnswer) {
