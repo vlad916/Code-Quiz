@@ -25,7 +25,7 @@ body {
   border-color: rgb(18, 19, 19);
   text-align: center;
   border-radius: 10px;
-  background-color: rgb(153, 152, 152);
+  background-color: rgb(201, 201, 39);
 }
 button {
   margin-top: 10px;
@@ -40,5 +40,11 @@ button {
   box-shadow: 5px 5px 7px black;
 }
 hr {
-  background-color: rgba(88, 87, 87, 0.575);
+  background-color: rgba(77, 76, 76, 0.575);
+}
+.scoreButton {
+  margin-bottom: 50px;
+}
+.clearButton {
+  margin-bottom: 50px;
 }

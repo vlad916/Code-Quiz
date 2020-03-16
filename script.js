@@ -94,7 +94,7 @@ function getInitials() {
   scoresDiv.style.display = "block";
 }
 
-// If "Go Back" button is clicked, this function is triggered to go back to the start page
+// If "Start Over" button is clicked, this function is triggered to go back to the start page
 function startOver() {
   document.getElementById("choice-response").innerHTML = "";
   scoresDiv.style.display = "none";
@@ -163,12 +163,12 @@ function displayQuestions() {
       if (optionClicked === questions[questionIndex].correctAnswer) {
         // Variable is keeping track of the correct answers
         numCorrect++;
-        document.getElementById("choice-response").innerHTML = "correct";
+        document.getElementById("choice-response").innerHTML = "Correct";
         displayQuestions(questionIndex++);
       } else {
         // Incorrect answers result in a time penalty
         secondsRemaining = secondsRemaining - penaltySeconds;
-        document.getElementById("choice-response").innerHTML = "wrong";
+        document.getElementById("choice-response").innerHTML = "Wrong";
         displayQuestions(questionIndex++);
       }
     });
